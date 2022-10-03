@@ -1,6 +1,6 @@
 # token-tracker
 
-This project is an exmaple of how to track users balances for a fixed list of erc20 tokens
+This project is an example of how to track users balances for a fixed list of erc20 tokens
 
 # tokens being tracked - 
 
