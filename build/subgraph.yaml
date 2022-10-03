@@ -1,12 +1,12 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: TetherToken
     network: mainnet
     source:
-      address: '0xdAC17F958D2ee523a2206206994597C13D831ec7'
+      address: "0xdAC17F958D2ee523a2206206994597C13D831ec7"
       abi: TetherToken
     mapping:
       kind: ethereum/events
@@ -16,16 +16,16 @@ dataSources:
         - Transfer
       abis:
         - name: TetherToken
-          file: ./abis/TetherToken.json
+          file: TetherToken/abis/TetherToken.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
-      file: ./src/tether-token.ts
+      file: TetherToken/TetherToken.wasm
   - kind: ethereum
     name: BNB
     network: mainnet
     source:
-      address: '0xB8c77482e45F1F44dE1745F52C74426C631bDD52'
+      address: "0xB8c77482e45F1F44dE1745F52C74426C631bDD52"
       abi: BNB
     mapping:
       kind: ethereum/events
@@ -35,16 +35,16 @@ dataSources:
         - BNBTransfer
       abis:
         - name: BNB
-          file: ./abis/BNB.json
+          file: BNB/abis/BNB.json
       eventHandlers:
         - event: BNBTransfer(indexed address,indexed address,uint256)
           handler: handleBNBTransfer
-      file: ./src/bnb.ts
+      file: BNB/BNB.wasm
   - kind: ethereum
     name: MyAdvancedToken
     network: mainnet
     source:
-      address: '0x90F64cD258373C6A2bf7F0fC0034D1a95fF6954e'
+      address: "0x90F64cD258373C6A2bf7F0fC0034D1a95fF6954e"
       abi: MyAdvancedToken
     mapping:
       kind: ethereum/events
@@ -54,16 +54,16 @@ dataSources:
         - MyAdvancedTokenTransfer
       abis:
         - name: MyAdvancedToken
-          file: ./abis/MyAdvancedToken.json
+          file: MyAdvancedToken/abis/MyAdvancedToken.json
       eventHandlers:
         - event: MyAdvancedTokenTransfer(indexed address,indexed address,uint256)
           handler: handleMyAdvancedTokenTransfer
-      file: ./src/my-advanced-token.ts
+      file: MyAdvancedToken/MyAdvancedToken.wasm
   - kind: ethereum
     name: BAToken
     network: mainnet
     source:
-      address: '0x0D8775F648430679A709E98d2b0Cb6250d2887EF'
+      address: "0x0D8775F648430679A709E98d2b0Cb6250d2887EF"
       abi: BAToken
     mapping:
       kind: ethereum/events
@@ -73,16 +73,16 @@ dataSources:
         - BATokenTransfer
       abis:
         - name: BAToken
-          file: ./abis/BAToken.json
+          file: BAToken/abis/BAToken.json
       eventHandlers:
         - event: BATokenTransfer(indexed address,indexed address,uint256)
           handler: handleBATokenTransfer
-      file: ./src/ba-token.ts
+      file: BAToken/BAToken.wasm
   - kind: ethereum
     name: Dai
     network: mainnet
     source:
-      address: '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+      address: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
       abi: Dai
     mapping:
       kind: ethereum/events
@@ -92,8 +92,8 @@ dataSources:
         - DaiTransfer
       abis:
         - name: Dai
-          file: ./abis/Dai.json
+          file: Dai/abis/Dai.json
       eventHandlers:
         - event: DaiTransfer(indexed address,indexed address,uint256)
           handler: handleDaiTransfer
-      file: ./src/dai.ts
+      file: Dai/Dai.wasm
