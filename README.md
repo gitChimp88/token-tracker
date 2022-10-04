@@ -13,3 +13,28 @@ dai - 0x6B175474E89094C44Da98b954EedeAC495271d0F
 # Subgraph to query - 
 
 https://thegraph.com/hosted-service/subgraph/gitchimp88/token-tracker
+
+example queries - 
+{
+  users(first: 40) {
+    id
+    bat
+    bnb
+    dai
+    xrp
+    usdt
+  }
+}
+
+or
+
+{
+  user(id: "0x0007dc149f8930f761976a6cac3bab1b73e58c5c") {
+    id
+    bat
+    bnb
+    dai
+    xrp
+    usdt
+  }
+}
