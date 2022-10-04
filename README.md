@@ -16,25 +16,25 @@ https://thegraph.com/hosted-service/subgraph/gitchimp88/token-tracker
 
 example queries - 
 {
-  users(first: 40) {
-    id
-    bat
-    bnb
-    dai
-    xrp
-    usdt
-  }
+  users(first: 40) { <br/>
+    id <br/>
+    bat <br/>
+    bnb <br/>
+    dai <br/>
+    xrp <br/>
+    usdt <br/>
+  } <br/>
 }
 
 or
 
 {
-  user(id: "0x0007dc149f8930f761976a6cac3bab1b73e58c5c") {
-    id
-    bat
-    bnb
-    dai
-    xrp
-    usdt
-  }
+  user(id: "0x0007dc149f8930f761976a6cac3bab1b73e58c5c") { <br/>
+    id <br/>
+    bat <br/>
+    bnb <br/>
+    dai <br/>
+    xrp <br/>
+    usdt <br/>
+  } <br/>
 }
