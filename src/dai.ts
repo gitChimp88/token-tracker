@@ -27,8 +27,11 @@ export function handleDaiTransfer(event: DaiTransferEvent): void {
   }
 
   const value = event.params.wad;
-  userFrom.dai = userFrom.dai.plus(value);
-  userTo.dai = userTo.dai.minus(value);
+  const hasBalanceGreaterThanZero = !userFrom.dai.isZero();
+  if(hasBalanceGreaterThanZero){
+    userFrom.dai = userFrom.dai.minus(value);
+  }
+  userTo.dai = userTo.dai.plus(value);
 
   userFrom.save();
   userTo.save();

@@ -28,8 +28,12 @@ export function handleBATokenTransfer(event: BATokenTransferEvent): void {
   }
 
   const value = event.params._value;
-  userFrom.bat = userFrom.bat.plus(value);
-  userTo.bat = userTo.bat.minus(value);
+  const hasBalanceGreaterThanZero = !userFrom.bat.isZero();
+  if(hasBalanceGreaterThanZero){
+    userFrom.bat = userFrom.bat.minus(value);
+  }
+  userTo.bat = userTo.bat.plus(value);
+
   userFrom.save();
   userTo.save();
 }

@@ -29,8 +29,12 @@ export function handleMyAdvancedTokenTransfer(
   }
 
   const value = event.params.value;
-  userFrom.xrp = userFrom.xrp.plus(value);
-  userTo.xrp = userTo.xrp.minus(value);
+  const hasBalanceGreaterThanZero = !userFrom.xrp.isZero();
+  if(hasBalanceGreaterThanZero){
+    userFrom.xrp = userFrom.xrp.minus(value);
+  }
+  userTo.xrp = userTo.xrp.plus(value);
+  
   userFrom.save();
   userTo.save();
 }

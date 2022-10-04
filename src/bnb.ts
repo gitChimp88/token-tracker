@@ -28,8 +28,12 @@ export function handleBNBTransfer(event: BNBTransferEvent): void {
   }
 
   const value = event.params.value;
-  userFrom.bnb = userFrom.bnb.plus(value);
-  userTo.bnb = userTo.bnb.minus(value);
+  const hasBalanceGreaterThanZero = !userFrom.bnb.isZero();
+  if(hasBalanceGreaterThanZero){
+    userFrom.bnb = userFrom.bnb.minus(value);
+  }
+  userTo.bnb = userTo.bnb.plus(value);
+  
   userFrom.save();
   userTo.save();
 }

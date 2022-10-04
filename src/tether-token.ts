@@ -81,8 +81,12 @@ export function handleTransfer(event: Transfer): void {
   }
 
   const value = event.params.value;
-  userFrom.usdt = userFrom.usdt.plus(value);
-  userTo.usdt = userTo.usdt.minus(value);
+  const hasBalanceGreaterThanZero = !userFrom.usdt.isZero();
+  if(hasBalanceGreaterThanZero){
+    userFrom.usdt = userFrom.usdt.minus(value);
+  }
+  userTo.usdt = userTo.usdt.plus(value);
+  
   userFrom.save();
   userTo.save();
 }
