@@ -14,7 +14,7 @@ dai - 0x6B175474E89094C44Da98b954EedeAC495271d0F
 
 https://thegraph.com/hosted-service/subgraph/gitchimp88/token-tracker
 
-example queries - 
+example queries - <br/>
 {
   users(first: 40) { <br/>
     id <br/>
